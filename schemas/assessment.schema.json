@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local migration assessment",
+  "type": "object",
+  "required": ["schemaVersion", "mode", "snapshot", "projectFingerprint", "catalogSnapshot", "coverage", "findings", "installedState", "liveChangesPerformed"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "mode": { "enum": ["demo", "project"] },
+    "assessedOn": { "type": "string", "format": "date" },
+    "sourceReviewedOn": { "type": "string", "format": "date" },
+    "snapshot": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "projectFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "catalogSnapshot": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "coverage": { "type": "object", "required": ["filesRead", "incomplete"], "properties": {
+      "filesRead": { "type": "integer", "minimum": 0, "maximum": 500 },
+      "incomplete": { "type": "boolean" }
+    } },
+    "findings": { "type": "array", "items": { "type": "object", "required": ["recipeId", "status", "evidenceCount"], "properties": {
+      "recipeId": { "type": "string" },
+      "status": { "enum": ["affected", "not-affected-in-inspected-source", "unknown"] },
+      "evidenceCount": { "type": "integer", "minimum": 0 }
+    } } },
+    "installedState": { "const": "unknown" },
+    "liveChangesPerformed": { "const": false },
+    "credentialsRequired": { "const": false }
+  }
+}

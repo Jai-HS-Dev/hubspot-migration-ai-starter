@@ -1,0 +1,18 @@
+{
+  "uid": "example-migrated-card-app",
+  "type": "app",
+  "config": {
+    "name": "Example Migrated Card",
+    "description": "Synthetic read-only legacy card migration example.",
+    "distribution": "private",
+    "auth": {
+      "type": "no_api_access",
+      "requiredScopes": []
+    },
+    "permittedUrls": {
+      "fetch": [],
+      "iframe": [],
+      "img": []
+    }
+  }
+}

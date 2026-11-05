@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-04",
+  "projectBaseline": "2026.09",
+  "apiBaseline": "2026-09",
+  "recipes": [
+    {
+      "id": "legacy-crm-cards",
+      "name": "Legacy CRM card to app card",
+      "path": "recipes/legacy-crm-cards/README.md",
+      "support": "contract-tested-local-example",
+      "liveAccountVerified": false,
+      "irreversibleCutover": true,
+      "sources": [
+        "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/migrate-an-app/migrate-legacy-crm-cards-to-app-cards",
+        "https://github.com/HubSpot/ui-extensions-examples/tree/main/legacy-card-converter"
+      ],
+      "milestones": [
+        { "date": "2026-11-02", "kind": "legacy-view-removal", "summary": "Guide lists removal of legacy cards from customer views." },
+        { "date": "2026-12-01", "kind": "migration-tool-window", "summary": "Guide lists end of migration UI/API availability. Recheck before a cutover." }
+      ]
+    },
+    {
+      "id": "workflow-node-24",
+      "name": "Workflow custom code to Node.js 24",
+      "path": "recipes/workflow-node-24/README.md",
+      "support": "contract-tested-handler-example",
+      "liveAccountVerified": false,
+      "irreversibleCutover": false,
+      "sources": ["https://developers.hubspot.com/docs/api-reference/legacy/automation/workflow-actions/upgrade-custom-code-actions-to-node-24"],
+      "milestones": [
+        { "date": "2026-11-03", "kind": "creation-restriction", "summary": "New Node.js 20 custom code actions cannot be created." },
+        { "date": "2026-11-17", "kind": "editing-restriction", "summary": "The dated notice blocks saving Node.js 20 actions; existing executions continue." }
+      ]
+    },
+    {
+      "id": "design-manager-functions",
+      "name": "Design Manager functions to Developer Projects",
+      "path": "recipes/design-manager-functions/README.md",
+      "support": "guidance-only",
+      "liveAccountVerified": false,
+      "irreversibleCutover": false,
+      "sources": ["https://developers.hubspot.com/docs/cms/reference/serverless-functions/migrate-design-manager-serverless-to-projects"],
+      "milestones": [
+        { "date": "2026-11-17", "kind": "editing-restriction", "summary": "Existing Design Manager functions cannot be edited." },
+        { "date": "2027-02-01", "kind": "execution-shutdown", "summary": "Legacy Design Manager endpoints stop executing." }
+      ]
+    },
+    {
+      "id": "date-based-apis",
+      "name": "Legacy CRM API paths to date-based APIs",
+      "path": "recipes/date-based-apis/README.md",
+      "support": "guidance-only",
+      "liveAccountVerified": false,
+      "irreversibleCutover": false,
+      "sources": ["https://developers.hubspot.com/changelog/legacy-apis-and-legacy-apps-whats-going-unsupported-and-when"],
+      "milestones": [
+        { "date": "2026-12-04", "kind": "pipelines-v1-shutdown", "summary": "Pipelines v1 stops working; not the general legacy API deadline." },
+        { "date": "2027-03-30", "kind": "v4-support-end", "summary": "CRM v4 has a separate earlier end-of-support date." }
+      ]
+    },
+    {
+      "id": "legacy-apps",
+      "name": "Legacy app architecture and authentication review",
+      "path": "recipes/legacy-apps/README.md",
+      "support": "guidance-only",
+      "liveAccountVerified": false,
+      "irreversibleCutover": false,
+      "sources": ["https://developers.hubspot.com/docs/apps/developer-platform/build-apps/migrate-an-app/overview"],
+      "milestones": []
+    }
+  ]
+}

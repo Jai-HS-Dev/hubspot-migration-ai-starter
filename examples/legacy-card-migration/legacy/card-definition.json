@@ -1,0 +1,12 @@
+{
+  "title": "Example support items",
+  "fetch": {
+    "targetUrl": "https://api.example.com/card-data",
+    "objectTypes": [{ "name": "contacts", "propertiesToSend": [] }]
+  },
+  "display": { "properties": [
+    { "name": "priority", "label": "Priority", "dataType": "STRING" },
+    { "name": "status", "label": "Status", "dataType": "STRING" }
+  ] },
+  "actions": { "baseUrls": ["https://api.example.com"] }
+}

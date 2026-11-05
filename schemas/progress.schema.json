@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Saved local migration progress, never live authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recipeId", "targetFingerprint", "sourceSnapshot", "catalogSnapshot", "accountVerification", "liveAuthorization", "deployment"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recipeId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "sourceSnapshot": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "targetFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "catalogSnapshot": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "inventory": { "const": "local-source-assessed" },
+    "plan": { "const": "needs-human-review" },
+    "localExample": { "enum": ["not-run", "synthetic-demo-passed"] },
+    "accountVerification": { "const": "unknown" },
+    "liveAuthorization": { "const": "not-granted" },
+    "deployment": { "const": "not-performed" }
+  }
+}

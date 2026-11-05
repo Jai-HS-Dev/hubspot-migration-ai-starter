@@ -1,0 +1,6 @@
+{
+  "results": [
+    { "objectId": "demo-item-1", "title": "Synthetic support request", "link": "https://example.com/items/demo-item-1", "priority": "Normal", "status": "Open" },
+    { "objectId": "demo-item-2", "title": "Synthetic follow-up", "priority": "High", "status": "Pending" }
+  ]
+}

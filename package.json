@@ -1,0 +1,18 @@
+{
+  "name": "hubspot-migration-ai-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-tool-neutral, mock-first HubSpot migration guidance and local assessment tools.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "demo": "node scripts/demo.mjs",
+    "progress": "node scripts/progress.mjs",
+    "check:ai": "node scripts/ai-readiness-check.mjs",
+    "check": "node scripts/syntax-check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "smoke:example": "node scripts/demo.mjs"
+  }
+}

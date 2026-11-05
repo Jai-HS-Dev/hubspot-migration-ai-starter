@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-04",
+  "examples": [
+    {
+      "path": "examples/legacy-card-migration",
+      "status": "runnable-locally",
+      "localCheck": "demo",
+      "note": "Offline adapter and synthetic fixtures. Legacy inputs are non-deployable.",
+      "liveAccountVerified": false,
+      "productionReady": false
+    },
+    {
+      "path": "examples/legacy-card-migration/modern",
+      "status": "illustrative",
+      "localCheck": "test",
+      "note": "Synthetic app/card project scaffold with a locally tested renderer; no cloud build, install or view migration verified.",
+      "liveAccountVerified": false,
+      "productionReady": false
+    },
+    {
+      "path": "examples/workflow-node-24",
+      "status": "runnable-locally",
+      "localCheck": "test",
+      "note": "Offline handler-output parity only; legacy handler is a non-deployable input fixture.",
+      "liveAccountVerified": false,
+      "productionReady": false
+    }
+  ]
+}

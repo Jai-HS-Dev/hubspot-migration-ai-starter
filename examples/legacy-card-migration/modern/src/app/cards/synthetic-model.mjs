@@ -1,0 +1,14 @@
+export const model = {
+  "state": "success",
+  "title": "Example support items",
+  "items": [
+    { "id": "demo-item-1", "title": "Synthetic support request", "href": "https://example.com/items/demo-item-1", "properties": [
+      { "label": "Priority", "value": "Normal" }, { "label": "Status", "value": "Open" }
+    ] },
+    { "id": "demo-item-2", "title": "Synthetic follow-up", "href": null, "properties": [
+      { "label": "Priority", "value": "High" }, { "label": "Status", "value": "Pending" }
+    ] }
+  ],
+  "actions": [],
+  "liveWritesEnabled": false
+};
