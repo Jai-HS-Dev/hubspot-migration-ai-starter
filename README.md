@@ -1,92 +1,150 @@
 # HubSpot Migration AI Starter
 
-Migrate existing HubSpot integrations with help from any AI coding tool.
+Keep an existing HubSpot integration working as platform requirements change.
 
-**Guided starter, not a finished production integration.**
+**A practical migration blueprint with small examples, not a finished production
+migration or a universal converter.** Start offline, then use approved HubSpot
+account access to test the replacement and verify the existing installation.
+No coding experience is assumed; the guide helps you choose each next step.
 
-**Your first result:** Convert synthetic legacy-card data, compare old and new behavior, and produce a local assessment without changing an installed app. Synthetic card data and request-format parity checks pass. Installed account state stays unknown; no migration or deployment occurs.
+## What This Helps You Do
 
+Identify what may need updating, describe the behavior you must preserve, and
+plan a small, testable migration. Topics include legacy CRM cards, workflow code,
+serverless functions, APIs and authentication.
 
-For non-developers, vibe coders, and developers. This is a fourth companion to
-the card, agent-tool, and OAuth starters: assessment and migration first, not a
-replacement for those projects.
+**Your first result:** Convert made-up legacy-card data and compare old/new
+behavior locally. No installed app changes; account state remains unknown.
 
-## Quick Start
+## Choose Your Starting Point
 
-Follow [your first working result](docs/start-here.md): describe your goal, run the
-credential-free mock, choose auth/hosting only if needed, make one small change,
-and verify what is still unfinished. No account connection is needed to begin.
+### I'm New To Coding
 
-Using an assistant? Open [START_WITH_AI.md](START_WITH_AI.md). It should ask one
-plain-language question at a time. The walkthrough includes Windows commands,
-expected output, stop instructions and [safe recovery](docs/troubleshooting.md).
+Follow [the step-by-step walkthrough](docs/start-here.md). It explains where to
+type commands, what success means and how to recover safely.
 
-Experienced developers can jump to [architecture](docs/developer-architecture.md)
-and [the contract](docs/contracts/assessment.md); the same evidence and safety limits apply.
+### I'm Building With AI
 
-## Pick Your Path
+Use the prompt below, then choose the relevant [migration recipe](recipes/README.md).
+Your assistant should ask one plain-language question at a time.
 
-| You want | Start here |
+### I'm A Developer
+
+Jump to [architecture](docs/developer-architecture.md), the
+[assessment contract](docs/contracts/assessment.md) and
+[recipe support levels](migration-catalog.json). The same approval limits apply.
+
+## Start With Your AI Assistant
+
+Paste this into an assistant that can read the repository files:
+
+```text
+Read README.md, AGENTS.md and START_WITH_AI.md.
+Help me preserve [describe the existing behavior] during a HubSpot migration.
+Start with the offline demo. Explain commands and expected results.
+Inspect only my approved source folder, read-only; do not run its scripts.
+When account testing is needed, use docs/connect-to-hubspot.md.
+Help me choose a test account and preserve working app identity, auth and hosting.
+Never ask for secrets or customer data in chat.
+Ask approval before packages, account access, uploads, deployment or cutover.
+```
+
+[START_WITH_AI.md](START_WITH_AI.md) has the fuller first-conversation prompt;
+[AGENTS.md](AGENTS.md) holds canonical coding instructions. Tool-specific files
+point there. Automatic loading varies between AI tools. No MCP connection is
+needed for the offline checks.
+
+## Try The Safe Example
+
+You need Node.js 24+ and npm; the [walkthrough](docs/start-here.md) records the
+tested version and setup guidance. This local runtime is separate from managed
+HubSpot and hosting-provider runtimes.
+
+Download and extract the repository. Open a terminal in the folder containing
+`README.md` and `package.json`, then run:
+
+```bash
+npm run doctor
+npm run demo
+```
+
+On Windows PowerShell, use:
+
+```powershell
+npm.cmd run doctor
+npm.cmd run demo
+```
+
+No packages, credentials or HubSpot connection are needed for this demo.
+The doctor should say `demo mode` and `Installed state: unknown.`;
+the demo ends with:
+
+```text
+Demo passed. No packages installed, no network calls, no HubSpot migration performed.
+```
+
+The commands finish and return to the terminal prompt. This proves only the
+documented local behavior, not that your installed integration has migrated.
+If a command fails, stop and use [troubleshooting](docs/troubleshooting.md);
+do not weaken security settings or enter live credentials to make it pass.
+
+## Connect To HubSpot When You're Ready
+
+Assessing approved local source needs no account connection. Testing an installed
+replacement or verifying the actual app does need suitable account access.
+
+Use [the migration connection guide](docs/connect-to-hubspot.md) to choose a
+developer test account, check feature/plan availability, and review existing
+authentication and hosting. A separate test app can help learning; it is not a
+migration of the original app. Do not replace working OAuth or app identity just
+to follow an example.
+
+## What Is Included And What Isn't
+
+| Area | Actual support |
 | --- | --- |
-| A first result without coding experience | [One offline walkthrough](docs/start-here.md) |
-| An existing integration to assess | The same walkthrough, then the approved source folder and [recipe](recipes/README.md) |
-| Developer contracts and implementation | [Architecture](docs/developer-architecture.md) and [assessment contract](docs/contracts/assessment.md) |
+| [Legacy-card example](examples/legacy-card-migration/README.md) | Runnable offline: small plain-text subset, synthetic data and request-format comparison. Unsupported types/actions stop with an error. |
+| [Modern app/card scaffold](examples/legacy-card-migration/modern/README.md) | Illustrative: locally tested renderer; no cloud build, install or view migration verified. Legacy input fixtures must not be deployed. |
+| [Workflow example](examples/workflow-node-24/README.md) | Runnable offline: before/after handler-output comparison, not a workflow deployment. |
+| [Other recipes](recipes/README.md) | Assessment signals and procedures only, not automatic conversion. |
 
-Start without account access. Repository samples are not proof that a feature is
-installed. [Choose your scope](docs/choose-your-path.md); don't combine all companions
-or replace working authentication merely to follow the demo.
+[Evidence](EVIDENCE.md) and the [example catalog](examples/catalog.json) record
+limits. No example currently claims developer-account verification or production
+readiness. The doctor uses bounded heuristics, not an account audit; missing
+evidence is not a clean bill of health.
 
-## What Is Actually Implemented?
+## Plan One Migration Safely
 
-See [EVIDENCE.md](EVIDENCE.md) for verification limits and the optional UI project.
+1. Inspect only the approved source folder, read-only.
+2. Record affected behavior, inspected-source findings and unknowns in a private
+   [inventory](templates/inventory.md) and [plan](templates/migration-plan.md).
+3. Recheck official requirements, implement a small replacement and test it with
+   synthetic data in the approved environment.
+4. Verify the exact original app, account, views and behavior before requesting
+   separate approval for cutover and later cleanup.
+5. Write an honest [verification report](templates/verification-report.md).
 
-| Migration | Evidence in this release | Live verified? |
-| --- | --- | --- |
-| Legacy CRM cards | Offline adapter, matching React card scaffold, data/render parity and failure tests | No |
-| Workflow Node.js 24 | Small before/after handlers with output-parity tests | No |
-| Design Manager functions | Assessment signals and reviewed procedure only | No |
-| Date-based CRM APIs | Source-pattern assessment and migration procedure only | No |
-| Legacy apps/authentication | Modern metadata hints and manual review procedure only | No |
+**Legacy card view migration cannot be reversed. A source backup does not undo
+it.** This toolkit never invokes that migration or deletes cards/flags.
+Read [cutover and recovery](docs/cutover-and-recovery.md) and the
+[real-migration checklist](REAL_MIGRATION_CHECKLIST.md) before live operations.
 
-The card example supports a deliberately small plain-text subset. It is **not a
-universal converter or account-verified deployment**. A synthetic React project
-is in `examples/legacy-card-migration/modern/`; its metadata matches the reviewed
-2026.09 schemas. Unsupported actions/types stop
-with an error. Use the official converter and the card starter to implement the
-chosen replacement, then test it in the original app's developer environment.
+Keep secrets and customer data out of chats, GitHub, screenshots and logs.
+Use [security guidance](docs/security-for-non-developers.md) and
+[approval gates](docs/non-developer-safety-gates.md); successful tests or saved
+progress never grant permission for account changes.
 
-## Example Labels
+## Developer Reference
 
-[examples/catalog.json](examples/catalog.json) lists every example and its limits.
-**Runnable locally** means the stated mock/offline check runs after its documented
-setup. **Illustrative** means a pattern or scaffold, not a complete runnable or
-deployable integration. **Developer-account verified** requires recorded installed
-evidence; none of these examples currently claims it. **Production prerequisites**
-are work to review, not a certification or an included production service.
+- [Compatibility](COMPATIBILITY.md) and [migration notices](MIGRATION.md): reviewed versions, deadlines and source limits.
+- [Authentication](docs/auth-options.md) and [hosting](docs/hosting-options.md): preserve working choices unless change is necessary.
+- [Assessment](docs/contracts/assessment.md), [card](docs/contracts/legacy-card.md) and [progress](docs/contracts/progress.md) contracts.
 
-| Example | Status | What the local evidence covers |
-| --- | --- | --- |
-| [examples/legacy-card-migration](examples/legacy-card-migration/README.md) | Runnable locally | Offline adapter and synthetic fixtures. Legacy inputs are non-deployable. |
-| [examples/legacy-card-migration/modern](examples/legacy-card-migration/modern/README.md) | Illustrative | Synthetic app/card project scaffold with a locally tested renderer; no cloud build, install or view migration verified. |
-| [examples/workflow-node-24](examples/workflow-node-24/README.md) | Runnable locally | Offline handler-output parity only; legacy handler is a non-deployable input fixture. |
+Run `npm run check:ai`, `npm run check`, `npm test` and `npm run demo` after changes
+(use `npm.cmd` on Windows). Report skipped/failed checks and installed evidence
+separately.
 
-Use [EVIDENCE.md](EVIDENCE.md) for the current verification record. Every example's
-README also states its status and points to the remaining live-use checklist.
-
-## One Migration Process
-
-1. Inspect the approved source folder read-only.
-2. Classify findings as affected, not affected in inspected source, or unknown.
-3. Recheck official sources and create a [plan](templates/migration-plan.md).
-4. Make and test small local changes with synthetic data.
-5. Verify the exact app/account/environment and request explicit live approval.
-6. Verify installed behavior and write an honest [completion report](templates/verification-report.md).
-
-Legacy card **view migration cannot be reversed**. A source-code backup does not
-reverse it. Nothing in this toolkit invokes the migration API or deletes flags/cards.
-See [cutover gates](docs/cutover-and-recovery.md) before planning that operation.
-
-## Resume Without Carrying Secrets
+To save demo progress locally:
 
 ```bash
 npm run progress -- init --recipe legacy-crm-cards
@@ -95,34 +153,23 @@ npm run progress -- check
 npm run demo -- --save
 ```
 
-Only `init` and `demo --save` create files, under ignored `.migration-local/`.
-They never overwrite existing reports. Use the same `--project` path when checking
-a real-project snapshot. Saved state is editable, untrusted local evidence:
-it never grants approval or proves deployment. [Progress contract](docs/contracts/progress.md).
+Only `init` and `demo --save` create files under ignored `.migration-local/`;
+they do not overwrite existing reports. Keep the same `--project` path when
+checking a real-project snapshot. Saved state is untrusted evidence, not approval.
 
-## Familiar Companion Repositories
+[Choose your scope](docs/choose-your-path.md) before using companions:
+[contact card](https://github.com/Jai-HS-Dev/hubspot-contact-card-ai-starter/tree/dc5cf0d),
+[agent tools](https://github.com/Jai-HS-Dev/hubspot-agent-tools-ai-starter/tree/26fe2ac),
+or [OAuth](https://github.com/Jai-HS-Dev/hubspot-oauth-service-ai-starter/tree/331841b).
+These pinned references are optional, not certified plug-compatible services.
 
-- [Contact-card starter](https://github.com/Jai-HS-Dev/hubspot-contact-card-ai-starter/tree/dc5cf0d): card UI and backend choices.
-- [Agent-tools starter](https://github.com/Jai-HS-Dev/hubspot-agent-tools-ai-starter/tree/26fe2ac): optional reuse of existing tool endpoints.
-- [OAuth starter](https://github.com/Jai-HS-Dev/hubspot-oauth-service-ai-starter/tree/331841b): secure installation/token lifecycle patterns.
+## Help And License
 
-These pinned references are for comparison, not certified plug-in compatibility.
-Do not replace working auth or force an agent-tool integration to migrate a card.
+See [troubleshooting](docs/troubleshooting.md) and [best-effort support](SUPPORT.md).
+Report vulnerabilities through [SECURITY.md](SECURITY.md) without private data.
 
-## Current Guidance And Limits
-
-Sources reviewed **2026-11-04**. Project baseline `2026.09`; date-based API baseline
-`2026-09`. The local Node.js 24 requirement is separate from managed project
-functions and provider-specific runtimes. See [COMPATIBILITY.md](COMPATIBILITY.md)
-and [MIGRATION.md](MIGRATION.md) for deadlines and source-review limits.
-
-The doctor uses bounded heuristics, not an AST or account audit. It excludes
-credentials, symlinks, tests, fixtures, and examples inside an inspected project.
-Access failures and incomplete evidence are not a clean bill of health.
-
-## License And Implementation Responsibility
-
-MIT licensed; retain the notices in [LICENSE](LICENSE). Educational reference,
-provided as-is, not an official HubSpot product, security audit, compliance
-certification, or production guarantee. Review [implementation responsibility](docs/implementation-responsibility.md)
-and [REAL_MIGRATION_CHECKLIST.md](REAL_MIGRATION_CHECKLIST.md) before live use.
+Licensed under [MIT](LICENSE); preserve required copyright and license notices.
+Builders remain responsible for reviewing, testing, securing and operating their
+implementation; see [implementation responsibility](docs/implementation-responsibility.md).
+This independent community starter is not affiliated with or endorsed by HubSpot,
+and is not a security audit, legal advice or a production guarantee.
