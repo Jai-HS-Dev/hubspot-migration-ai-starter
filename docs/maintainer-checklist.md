@@ -1,5 +1,25 @@
 # Maintainer Checklist
 
+## GitHub Settings And Release Follow-Through
+
+Read-only settings snapshot checked 2026-11-05; no settings changed by these files.
+
+- Private vulnerability reporting: disabled; enabling it remains pending.
+- Keep the existing description; add topics and decide whether this should be a template.
+- Main was unprotected. Plan a PR-and-passing-CI rule after actual workflow runs;
+  agree review count and bypass/recovery options for a solo maintainer first.
+- Secret-scanning/push-protection status was not available in this read-only check.
+  Verify it in GitHub; a null API field is not evidence that a control is disabled.
+- Review these changes in a PR before publishing. CI has no HubSpot credentials,
+  deployment job or privileged pull_request_target event.
+- Publish release notes only after verifying the release contents and checks.
+  Existing release tags do not automatically include later main-branch changes.
+- Keep reviewed companion snapshots distinct from latest learning documentation.
+  Update pins deliberately; do not claim compatibility merely because a link works.
+- A source-copy test is not an independent beginner or AI-client evaluation.
+  Run the manual scenarios with consenting users/selected clients, record failures
+  and versions, and do not send private data to additional AI services by default.
+
 - Recheck each official source and record the reviewed date in catalog/docs.
 - Distinguish confirmed changes, conflicting guidance and unverified assumptions.
 - Keep IDs/support levels stable and test catalog/file-link integrity.
@@ -11,10 +31,10 @@
 - Inspect outbound behavior and new dependencies before approving additions.
 - Keep companion example references pinned; review version drift deliberately.
 
-No active CI workflow is included in version one. To add one, get explicit approval,
-review pinned actions and package execution, use read-only repository permissions,
-and run the four local checks without account secrets. Do not configure automatic
-deployments or production credentials as part of enabling test CI.
+The proposed .github/workflows/ai-starter-checks.yml runs the four local checks
+on Node.js 24 with Windows/Linux runners, pinned actions and read-only permissions.
+No account secrets, uploads or deployments are included. Verify an actual GitHub
+run after separate publication approval; source presence is not a passing run.
 
 ## Guided Starter Release Review
 

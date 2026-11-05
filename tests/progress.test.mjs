@@ -39,7 +39,7 @@ test('report writers refuse symlink directories', (t) => {
   const root = tempProject(t);
   const other = tempProject(t);
   try { fs.symlinkSync(other, path.join(root, '.migration-local'), process.platform === 'win32' ? 'junction' : 'dir'); }
-  catch (error) { if (error.code === 'EPERM') { t.skip('OS does not permit test symlinks.'); return; } throw error; }
+  catch (error) { if (error.code === 'EPERM' && !process.env.CI) { t.skip('OS does not permit test symlinks.'); return; } throw error; }
   assert.throws(() => saveLocalReport(root, 'receipt.json', {}), /symlink/);
   assert.equal(fs.existsSync(path.join(other, 'receipt.json')), false);
 });

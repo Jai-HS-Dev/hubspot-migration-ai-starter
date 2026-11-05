@@ -32,7 +32,7 @@ test('one walkthrough links scope, recovery, evidence and responsibility', () =>
   assert.ok(read('README.md').includes('(docs/start-here.md)'));
   assert.ok(read('docs/troubleshooting.md').includes('npm.cmd'));
   // Check local Markdown file targets without executing any document content.
-  for (const rel of ['README.md', 'START_WITH_AI.md', 'docs/start-here.md', 'docs/connect-to-hubspot.md', 'docs/auth-options.md', 'docs/troubleshooting.md', 'docs/choose-your-path.md']) {
+  for (const rel of ['README.md', 'START_WITH_AI.md', 'docs/start-here.md', 'docs/connect-to-hubspot.md', 'docs/auth-options.md', 'docs/worked-example.md', 'docs/glossary.md', 'docs/troubleshooting.md', 'docs/choose-your-path.md']) {
     for (const match of read(rel).matchAll(/\]\(([^)]+)\)/g)) {
       if (/^(https?:|mailto:|#)/.test(match[1])) continue;
       const target = path.resolve(root, path.dirname(rel), match[1].split('#')[0]);

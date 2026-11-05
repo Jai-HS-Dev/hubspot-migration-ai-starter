@@ -69,7 +69,7 @@ test('does not follow directory symlinks or junctions', (t) => {
   const other = tempProject(t);
   write(other, 'card.json', { fetch: { targetUrl: 'https://example.com' }, display: { properties: [] } });
   try { fs.symlinkSync(other, path.join(root, 'linked'), process.platform === 'win32' ? 'junction' : 'dir'); }
-  catch (error) { if (error.code === 'EPERM') { t.skip('OS does not permit test symlinks.'); return; } throw error; }
+  catch (error) { if (error.code === 'EPERM' && !process.env.CI) { t.skip('OS does not permit test symlinks.'); return; } throw error; }
   assert.equal(assessProject(root).coverage.filesRead, 0);
   assert.equal(assessProject(root).coverage.incomplete, true);
   assert.throws(() => assessProject(path.join(root, 'linked')));

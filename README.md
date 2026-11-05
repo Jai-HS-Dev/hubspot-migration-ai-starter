@@ -136,6 +136,9 @@ progress never grant permission for account changes.
 
 ## Developer Reference
 
+For a small next step, try [the worked exercise](docs/worked-example.md).
+New terms are explained in [the glossary](docs/glossary.md).
+
 - [Compatibility](COMPATIBILITY.md) and [migration notices](MIGRATION.md): reviewed versions, deadlines and source limits.
 - [Authentication](docs/auth-options.md) and [hosting](docs/hosting-options.md): preserve working choices unless change is necessary.
 - [Assessment](docs/contracts/assessment.md), [card](docs/contracts/legacy-card.md) and [progress](docs/contracts/progress.md) contracts.

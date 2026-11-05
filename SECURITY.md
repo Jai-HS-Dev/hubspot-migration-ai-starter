@@ -1,13 +1,23 @@
-# Security
+# Security Policy
 
-Do not post tokens, credentials, customer data, private URLs or filled migration
-reports in public issues. Report a suspected issue privately to the repository
-maintainers using a private channel agreed with them; do not assume a public issue
-is confidential. No monitored security email is supplied by this starter.
+Do not put credentials, customer data, private URLs, account identifiers or filled
+reports in public issues, screenshots or logs.
 
-The toolkit has no network client, live authentication flow or deployment command.
-That reduces its authority but is not a security certification. The doctor does
-read eligible source files: review the chosen scope and keep reports private.
+## Report Privately
 
-If a credential was exposed, follow a targeted revocation/recovery process with
-the account owner. Do not rotate unrelated token-encryption keys during migration.
+Open [Report a vulnerability](https://github.com/Jai-HS-Dev/hubspot-migration-ai-starter/security/advisories/new).
+Private reporting was disabled when checked on 2026-11-05; enabling it is a separate maintainer settings task.
+If the form is unavailable, use a public issue only to request a private contact;
+do not include vulnerability details, proofs containing private data or secrets.
+No monitored security email or response-time commitment is supplied here.
+[GitHub's reporting guide](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/report-privately).
+
+## Scope And Support
+
+This is guided learning material, not a security audit or production service.
+Report the starter version/commit, affected example, expected/actual behavior
+and a minimal synthetic reproduction privately. Never submit real credentials.
+
+The assessment tool reads approved source but does not establish installed account state.
+No supported-version SLA, comprehensive history scan or absence-of-vulnerabilities
+guarantee is claimed. See [support](SUPPORT.md) and [evidence](EVIDENCE.md).

@@ -1,0 +1,39 @@
+name: AI starter checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: ${{ matrix.os }} / Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [24]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, reviewed 2026-11-05
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, reviewed 2026-11-05
+        with:
+          node-version: ${{ matrix.node }}
+      - name: AI readiness and documentation checks
+        run: npm run check:ai
+      - name: Source syntax checks
+        run: npm run check
+      - name: Offline first-run check
+        run: npm run doctor
+      - name: Credential-free demo
+        run: npm run smoke:example
+      - name: Full local test suite
+        run: npm test
