@@ -32,7 +32,7 @@ identity, authentication and hosting unless the goal requires a change.
 ## Only Then Plan A Developer Trial
 
 Choose minimum data and scopes with [auth guidance](auth-options.md) and
-[hosting guidance](hosting-options.md). Confirm prerequisites in [compatibility](../COMPATIBILITY.md).
+[hosting guidance](hosting-options.md). Confirm prerequisites in [compatibility](COMPATIBILITY.md).
 A hosted demo is still a test, not production approval. Do not connect an account,
 publish, deploy, change permissions or mutate records without explicit approval
 for the target and operation. Start with approved synthetic data.
@@ -41,4 +41,4 @@ for the target and operation. Start with approved synthetic data.
 
 A private inventory and approved plan for the actual source, installed account evidence, unsupported behavior mapping, developer tests and a separately approved cutover. Keep verification distinct from generated code or local tests.
 Read [implementation responsibility](implementation-responsibility.md) and the
-[checklist](../REAL_MIGRATION_CHECKLIST.md).
+[checklist](REAL_MIGRATION_CHECKLIST.md).

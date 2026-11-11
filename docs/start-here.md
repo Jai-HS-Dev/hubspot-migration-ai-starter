@@ -2,20 +2,18 @@
 
 ## What You Will Finish
 
-Convert synthetic legacy-card data, compare old and new behavior, and produce a local assessment without changing an installed app.
+Check that a replacement preserves a label from a made-up legacy card, then try changing it without touching an installed app.
 
-This finishes a **local learning result and a next-step plan**, not a production
-integration. Synthetic card data and request-format parity checks pass. Installed account state stays unknown; no migration or deployment occurs. No HubSpot account, credentials, hosting or package
-installation is needed for this first result.
-
-A mock uses made-up data. A backend runs server-side. A smoke check is a short
-automated test that something basic works.
+The check also covers empty data and rejects unsupported actions. It does not inspect an account or change a record view.
+No HubSpot account, credentials, hosting, or package installation is needed.
+This is a local learning result, not a production integration.
 
 ## 1. Open The Project And Describe Your Goal
 
 If your editor already has the repository open, keep using that folder. For a
 published copy on GitHub, use **Code > Download ZIP**, extract it, then open the
-extracted folder as a project. No Git installation is required for this route.
+extracted folder as a project. No Git installation is required. If you use a
+release ZIP, give your AI the prompt link from the same release.
 [GitHub download instructions](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
 
 The repository root contains README.md and package.json. It is not the ZIP, its
@@ -42,42 +40,29 @@ guidance. Use a supported Node.js 24 release from the [official downloads](https
 to reproduce this path, then reopen the terminal. Do not run random install scripts
 or weaken execution policy.
 
-## 2. Run The Mock Example
+## 2. Run The First Build-Along
 
-From the repository root, check prerequisites, then run the short example:
+From the repository root, check prerequisites and run the example:
 
 ```bash
 npm run doctor
-npm run demo
+npm run build:example
 ```
 
-Windows PowerShell equivalent:
-
-```powershell
-npm.cmd run doctor
-npm.cmd run demo
-```
-
-Do not run npm install, create an app or enter credentials to make this step work.
-The doctor inspects the synthetic fixture by default, not your account or another project.
+In Windows PowerShell, use `npm.cmd` instead of `npm`.
+Do not install project packages, create an app, or enter credentials for this step.
 
 ### Recognize Success
 
-The doctor reports `HubSpot migration doctor: demo mode` and `Installed state: unknown.`.
-The example ends with:
+**Success looks like:** `worked migration preserves a custom label without claiming installed verification` passes.
+Other output and timings may differ. Wait for the terminal prompt to return.
+If you need to stop a running example, press **Ctrl+C** in that terminal only.
+If the command fails, use [troubleshooting](troubleshooting.md) without disabling
+security checks or granting more access.
 
-```text
-Demo passed. No packages installed, no network calls, no HubSpot migration performed.
-```
-
-Other lines, timings and ports may differ. The terminal prompt returns when the
-short check finishes. Unknown installed state is expected, not a successful live migration.
-If you separately start a long-running example, press **Ctrl+C in that example's
-terminal** to stop it; do not stop unrelated programs.
-
-You may stop here: the first local result is complete. Synthetic card data and request-format parity checks pass. Installed account state stays unknown; no migration or deployment occurs.
-If it fails, use [troubleshooting](troubleshooting.md). Never disable authentication,
-grant extra scopes or enter production credentials just to make a check pass.
+Follow [the build-along](worked-example.md) to make one small change and check it again.
+Before changing anything, answer: What existing behavior must stay the same, and what comparison would show that it survived the change?
+You can stop after this local result. No account changes have been made.
 
 ## 3. Choose Authentication And Hosting Only If Needed
 
@@ -92,7 +77,7 @@ You are building a new tool or card with nothing to migrate, or your source does
 
 For real work, identify the minimum data, access and existing host/auth first.
 Preserve working choices unless a change is necessary. Use [auth choices](auth-options.md),
-[hosting choices](hosting-options.md) and [compatibility](../COMPATIBILITY.md).
+[hosting choices](hosting-options.md) and [compatibility](COMPATIBILITY.md).
 Provider options are alternatives, not ready-made adapters for every host.
 
 Before connecting, obtain explicit approval for the exact account,
@@ -106,7 +91,7 @@ a safe failure and an acceptance check. Have the AI explain its changes before
 a small, approved local edit. Keep mock mode available.
 Inspect only the approved existing source folder, read-only, before planning a real migration.
 
-Check [example labels](../examples/catalog.json) and [evidence](../EVIDENCE.md).
+Check [example labels](../examples/catalog.json) and [evidence](EVIDENCE.md).
 Do not upload an illustrative folder or deploy an in-memory teaching service just
 because it contains configuration files.
 
@@ -133,7 +118,7 @@ Report failures and skipped tests honestly; a skip is not passed coverage.
 - You understand that installed-account and production behavior remain unverified.
 
 A real implementation still needs: A private inventory and approved plan for the actual source, installed account evidence, unsupported behavior mapping, developer tests and a separately approved cutover.
-Review [the live-use checklist](../REAL_MIGRATION_CHECKLIST.md) and
+Review [the live-use checklist](REAL_MIGRATION_CHECKLIST.md) and
 [implementation responsibility](implementation-responsibility.md) before real use.
 
 Report **generated**, **locally tested**, **developer-account verified** and

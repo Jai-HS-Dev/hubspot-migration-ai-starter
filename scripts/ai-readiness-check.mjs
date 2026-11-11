@@ -4,10 +4,10 @@ import { root } from './cli.mjs';
 import { catalog, dateOnly } from '../src/catalog.mjs';
 
 const required = [
-  'README.md', 'EVIDENCE.md', 'START_WITH_AI.md', 'AGENTS.md', 'CLAUDE.md', 'GEMINI.md',
+  'README.md', 'docs/EVIDENCE.md', 'START_WITH_AI.md', 'AGENTS.md', 'CLAUDE.md', 'GEMINI.md',
   'examples/catalog.json', 'docs/choose-your-path.md',
-  'LICENSE', 'SECURITY.md', 'SUPPORT.md', 'CONTRIBUTING.md', 'COMPATIBILITY.md',
-  'MIGRATION.md', 'REAL_MIGRATION_CHECKLIST.md', '.gitignore', '.env.example',
+  'LICENSE', 'SECURITY.md', 'docs/SUPPORT.md', 'CONTRIBUTING.md', 'docs/COMPATIBILITY.md',
+  'docs/MIGRATION.md', 'docs/REAL_MIGRATION_CHECKLIST.md', '.gitignore', '.env.example',
   '.cursor/rules/hubspot-migration.mdc', '.windsurfrules',
   '.github/instructions/migration.instructions.md', '.github/prompts/assess-my-migration.prompt.md',
   '.github/prompts/review-before-cutover.prompt.md', '.github/ISSUE_TEMPLATE/migration-help.yml',

@@ -33,6 +33,8 @@ jobs:
         run: npm run check
       - name: Offline first-run check
         run: npm run doctor
+      - name: Beginner build-along from a clean checkout
+        run: npm run build:example
       - name: Credential-free demo
         run: npm run smoke:example
       - name: Full local test suite

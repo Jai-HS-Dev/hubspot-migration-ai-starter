@@ -6,6 +6,18 @@ import { renderMigratedCard } from '../examples/legacy-card-migration/modern/src
 import { model } from '../examples/legacy-card-migration/modern/src/app/cards/synthetic-model.mjs';
 const json = file => JSON.parse(fs.readFileSync(new URL('../examples/legacy-card-migration/' + file, import.meta.url), 'utf8'));
 const ui = { React: { createElement: (type, props, ...children) => ({ type, props, children }) }, Flex: 'Flex', Text: 'Text', Link: 'Link', Divider: 'Divider' };
+test('replacement app declares the minimum Contacts scope and no external fetches', () => {
+  const app = json('modern/src/app/app-hsmeta.json').config;
+  const card = json('modern/src/app/cards/migrated-card-hsmeta.json').config;
+  assert.equal(app.distribution, 'private');
+  assert.equal(app.auth.type, 'static');
+  assert.deepEqual(app.auth.requiredScopes, ['oauth', 'crm.objects.contacts.read']);
+  assert.deepEqual(app.auth.optionalScopes, []);
+  assert.deepEqual(app.auth.conditionallyRequiredScopes, []);
+  assert.deepEqual(app.permittedUrls, { fetch: [], iframe: [], img: [] });
+  assert.deepEqual(card.objectTypes, ['CONTACT']);
+  assert.equal(card.location, 'crm.record.tab');
+});
 test('legacy data becomes the model consumed by the actual card renderer', () => {
   const converted = convertLegacyCard(json('legacy/card-definition.json'), json('legacy/card-response.json'));
   assert.deepEqual(model, converted);

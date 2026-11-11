@@ -1,5 +1,19 @@
 # Evidence And Support
 
+## README Update Verification
+
+Checked 2026-11-10 on Linux with Node.js 24.22.2, in an automated run by an AI
+coding assistant. This is not an independent beginner test.
+
+- `npm run check:ai`, `npm run check`, `npm run doctor`, `npm run demo` and `npm test` passed.
+- Every relative link in the Markdown files was checked to resolve to a file.
+- Reference documents moved from the repository root into docs/: EVIDENCE,
+  COMPATIBILITY, MIGRATION, ROADMAP, SUPPORT and REAL_MIGRATION_CHECKLIST. Links, AI
+  instructions and the readiness check were updated to the new locations.
+- Not established: how the README renders on GitHub, and the dev container in
+  GitHub Codespaces. No HubSpot account was connected and nothing was uploaded
+  or migrated.
+
 ## Starter Follow-Through Verification
 
 Checked 2026-11-05 on Windows with Node.js 24.22.1:
@@ -43,7 +57,7 @@ implementation responsibility does not guarantee immunity from legal claims.
 
 ## Example Label Contract
 
-[examples/catalog.json](examples/catalog.json) is the machine-readable index; each
+[examples/catalog.json](../examples/catalog.json) is the machine-readable index; each
 example README repeats its label next to the code.
 
 - **Runnable locally:** the named mock/offline check runs after documented setup.
@@ -56,7 +70,7 @@ example README repeats its label next to the code.
   production hosting, security certification or ongoing operation.
 
 The beginner finish line is the local demo plus a small plan. See
-[the walkthrough](docs/start-here.md) for success, recovery and what remains.
+[the walkthrough](start-here.md) for success, recovery and what remains.
 
 The proposed test-only CI source covers Windows/Linux on Node.js 24. It needs no
 HubSpot credentials or UI package installation and does not deploy. Verify the

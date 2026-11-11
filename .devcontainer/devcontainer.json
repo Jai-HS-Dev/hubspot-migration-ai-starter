@@ -1,0 +1,5 @@
+{
+  "name": "HubSpot Migration AI Starter (made-up data only)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  "postCreateCommand": "npm run doctor"
+}

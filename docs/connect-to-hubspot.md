@@ -116,7 +116,7 @@ Record **generated**, **locally tested**, **developer-account verified** and
 **deployed** separately. Use the private [verification report](../templates/verification-report.md),
 include failures and unknowns, and obtain separate cleanup approval.
 
-Review [the real-migration checklist](../REAL_MIGRATION_CHECKLIST.md) and
+Review [the real-migration checklist](REAL_MIGRATION_CHECKLIST.md) and
 [implementation responsibility](implementation-responsibility.md) before real use.
 An assessment or test does not certify production readiness.
 

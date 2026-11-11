@@ -66,13 +66,18 @@ test('AI entry points agree and client adapters delegate', () => {
 });
 test('the documented first-run success matches the actual credential-free command', () => {
   const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => /^(path|systemroot|windir|comspec|pathext|temp|tmp|systemdrive)$/i.test(key)));
-  const guide = read('docs/start-here.md');
   const doctor = spawnSync(process.execPath, ['scripts/doctor.mjs'], { cwd: root, env, encoding: 'utf8', timeout: 15000 });
   assert.equal(doctor.status, 0);
   assert.match(doctor.stdout, /demo mode/); assert.match(doctor.stdout, /Installed state: unknown/);
-  const run = spawnSync(process.execPath, ['scripts/demo.mjs'], { cwd: root, env, encoding: 'utf8', timeout: 15000 });
+  const args = ['--test','tests/worked-example.test.mjs'];
+  assert.equal(JSON.parse(read('package.json')).scripts['build:example'], ['node', ...args].join(' '));
+  const run = spawnSync(process.execPath, args, { cwd: root, env, encoding: 'utf8', timeout: 15000 });
   assert.equal(run.status, 0, run.stderr);
-  const expected = "Demo passed. No packages installed, no network calls, no HubSpot migration performed.";
-  assert.ok(guide.includes(expected));
-  assert.ok(run.stdout.includes(expected));
+  const expected = "worked migration preserves a custom label without claiming installed verification";
+  for (const file of ['README.md', 'START_WITH_AI.md', 'docs/start-here.md']) {
+    const content = read(file);
+    assert.ok(content.includes('npm run build:example') && content.includes(expected), file);
+  }
+  assert.match(read('.github/workflows/ai-starter-checks.yml'), /run: npm run build:example/);
+  assert.ok(run.stdout.includes("worked migration preserves a custom label without claiming installed verification"), run.stdout);
 });

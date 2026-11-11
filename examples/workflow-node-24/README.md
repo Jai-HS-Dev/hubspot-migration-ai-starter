@@ -3,7 +3,7 @@
 **Example status:** Runnable locally.
 **Local check:** `npm run test` from the repository root, after the documented setup.
 **Developer-account verification:** Not verified.
-**Production prerequisites:** Review [the checklist](../../REAL_MIGRATION_CHECKLIST.md) and [evidence](../../EVIDENCE.md); no production implementation is included.
+**Production prerequisites:** Review [the checklist](../../docs/REAL_MIGRATION_CHECKLIST.md) and [evidence](../../docs/EVIDENCE.md); no production implementation is included.
 
 Offline handler-output parity only; legacy handler is a non-deployable input fixture.
 
