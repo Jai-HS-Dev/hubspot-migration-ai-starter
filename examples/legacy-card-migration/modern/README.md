@@ -9,8 +9,10 @@ Synthetic app/card project scaffold with a locally tested renderer; no cloud bui
 
 
 This directory now includes a complete app/card **source scaffold**, not just a
-view-model snapshot. Its no_api_access app renders synthetic data only: no CRM
-scopes, external calls, secrets, buttons that mutate records, or account access.
+view-model snapshot. It renders synthetic data only: no CRM queries, external
+calls, secrets, or buttons that mutate records. The private static-auth app
+requests [the Contacts read scope for card visibility](https://developers.hubspot.com/docs/apps/developer-platform/add-features/ui-extensions/extension-points/app-cards/reference#supported-objects).
+That is account-level permission, even though this card does not query records.
 It is not a universal converter and has not been uploaded or live-account verified.
 
 ## Follow The Data

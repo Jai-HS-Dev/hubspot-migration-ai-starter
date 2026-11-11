@@ -6,8 +6,10 @@
     "description": "Synthetic read-only legacy card migration example.",
     "distribution": "private",
     "auth": {
-      "type": "no_api_access",
-      "requiredScopes": []
+      "type": "static",
+      "requiredScopes": ["oauth", "crm.objects.contacts.read"],
+      "optionalScopes": [],
+      "conditionallyRequiredScopes": []
     },
     "permittedUrls": {
       "fetch": [],

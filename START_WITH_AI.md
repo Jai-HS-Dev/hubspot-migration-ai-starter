@@ -42,6 +42,8 @@ Compare the old and new output on the supplied fixture. Say what matched and wha
 
 **A later decision:** For a real assessment, first agree on the exact source folder for read-only inspection. Do not run its scripts or start a migration. Use `docs/cutover-and-recovery.md` before discussing an account change.
 
+**Build something:** [Build the replacement status card](docs/worked-example.md) to compare expected results without swapping any live views.
+
 Report actual results separately from instructions or plans. See
 [what was tested](docs/EVIDENCE.md) for this starter's verification limits.
 

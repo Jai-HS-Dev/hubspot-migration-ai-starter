@@ -43,7 +43,7 @@ In Windows PowerShell, use `npm.cmd` instead of `npm`.
 
 ## Make It Yours
 
-1. **Practice:** [Try the worked exercise](docs/worked-example.md). Compare the old and new results and record any mismatch in a local verification report.
+1. **Build a replacement status card:** [Run the build-along](docs/worked-example.md), customize a label and check normal, empty, and unsupported behavior. The test-account trial is separate from migrating any live views.
 2. **Verify in HubSpot when ready:** [Choose the relevant migration recipe](recipes/README.md) and review [the dates that may affect you](docs/MIGRATION.md). Use a developer test account for a replacement trial. [Review cutover and recovery](docs/cutover-and-recovery.md) before any real change.
 3. **Before real use:** Review the [migration checklist](docs/REAL_MIGRATION_CHECKLIST.md). Approve the account, permissions, and action first. Never paste secrets into chat or commit them.
 
@@ -53,10 +53,14 @@ No specific AI editor or hosting provider is required. For account and authentic
 
 ## Tests And Help
 
+For production requirements, platform questions, or a complex build, see
+[where to get help](docs/SUPPORT.md#hubspot-questions-and-production-help).
+
 `npm test` checks the assessment and examples offline. [Learn how to save demo progress](docs/start-here.md) without touching the original project. See [what was tested](docs/EVIDENCE.md), [troubleshooting](docs/troubleshooting.md), and the [plain-language glossary](docs/glossary.md). [Support](docs/SUPPORT.md) is best-effort. Use the [security policy](SECURITY.md) to report security issues without exposing private data.
 
 ## License And Responsibility
 
-[MIT License](LICENSE). This independent project is not endorsed by HubSpot.
+[MIT License](LICENSE). This project is independent: it is not affiliated
+with, endorsed by, or supported by HubSpot.
 The examples are not security-audited and are provided as is, without warranty. You are responsible for
 [validating, securing, and operating what you build](docs/implementation-responsibility.md).

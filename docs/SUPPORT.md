@@ -1,7 +1,8 @@
 # Support And Maintenance
 
-This is a community guided starter, not official HubSpot support or a finished
-production integration. Support is best-effort: no response-time commitment,
+This independent starter is not affiliated with, endorsed by, or supported
+by HubSpot. It is not a finished production integration. Repository support
+is best-effort: no response-time commitment,
 service SLA, consulting, implementation support or security audit is included.
 
 ## Before Asking
@@ -19,6 +20,24 @@ operating system, expected result and a small synthetic reproduction. State
 whether the result is local, developer-account verified or deployed. Do not paste
 credentials, account identifiers, private URLs, customer data, full logs,
 environment files or screenshots of CRM records. Never commit filled private plans.
+
+## HubSpot Questions And Production Help
+
+- **Check platform requirements first:** use [HubSpot Developer Docs](https://developers.hubspot.com/docs)
+  for current feature availability, scopes, account types, and deployment steps.
+  A passing example does not verify those requirements for your project.
+- **Ask a development question:** use [HubSpot Community: Develop, Build & Integrate](https://community.hubspot.com/c/develop-build-integrate/58).
+  Share a synthetic reproduction, not credentials or CRM data. For a defect
+  in this starter, use this repository's issues instead.
+- **Get help with a complex or production build:** work with a developer you
+  trust or browse the [HubSpot Solutions Partner Directory](https://ecosystem.hubspot.com/marketplace/solutions).
+  Ask who owns access controls, data handling, deployment, monitoring, and
+  maintenance. Check the provider's fit, terms, and costs yourself. These
+  links are resources, not referrals or guarantees.
+
+Pause before using real customer data or granting broader access when you
+cannot explain the permissions, test plan, or recovery path. See
+[implementation responsibility](implementation-responsibility.md) before production.
 
 ## Security Problems
 
