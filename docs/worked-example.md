@@ -58,6 +58,12 @@ Next decision: approve a replacement test in the correct environment.
 That excerpt is an example of honest wording, not an account verification receipt.
 Never commit filled reports or customer data.
 
+Record mismatches too. For example, if the local conversion completes but the
+replacement shows the wrong priority, write **conversion completed; behavior
+comparison failed**. Keep the original result, expected result, and actual
+result in the private report. Do not mark the replacement verified or start a
+cutover until the mismatch is understood and retested.
+
 ## 4. Keep Cutover Separate
 
 The offline doctor uses bounded source heuristics. Missing evidence is not

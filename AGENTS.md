@@ -5,12 +5,16 @@ implementation. Help non-developers, vibe coders and developers follow one proce
 
 ## Hard Rules (Read First)
 
-- **Never:** ask for, print or store secrets, tokens or customer data in chat or files;
-  connect to, write to or deploy to a HubSpot account without approval; delete data;
-  disable a test, check or safeguard to get a passing result; describe this starter
-  or anything generated from it as production-ready.
+- **Never:** ask for, read, copy or print real secrets, tokens or customer data
+  in this starter workflow. Use placeholders and made-up data. Do not disable
+  safeguards or claim that local checks prove production readiness.
+- **Credentials:** when an approved test needs credentials, tell the user
+  where to enter them directly in an ignored local `.env` or an approved
+  secret store. Do not open that file, ask for its contents, or put credentials
+  in chat, logs, screenshots or Git.
 - **Ask first:** installing packages, network calls beyond this computer, any HubSpot
-  account access, scope or permission changes, uploads, deployment, and changes to
+  account access, scope or permission changes, uploads, deployment, revocation
+  or deletion, and changes to
   CI, security files or AI instructions.
 - **Always:** keep the made-up data mode working, explain each command in plain
   language before it runs, say what was not tested, and finish with one next decision.
