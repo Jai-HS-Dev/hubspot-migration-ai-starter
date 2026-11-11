@@ -1,5 +1,16 @@
 # Evidence And Support
 
+## README Update Verification
+
+Checked 2026-11-10 on Linux with Node.js 24.22.2, in an automated run by an AI
+coding assistant. This is not an independent beginner test.
+
+- `npm run check:ai`, `npm run check`, `npm run doctor`, `npm run demo` and `npm test` passed.
+- Every relative link in the Markdown files was checked to resolve to a file.
+- Not established: how the README renders on GitHub, and the dev container in
+  GitHub Codespaces. No HubSpot account was connected and nothing was uploaded
+  or migrated.
+
 ## Starter Follow-Through Verification
 
 Checked 2026-11-05 on Windows with Node.js 24.22.1:

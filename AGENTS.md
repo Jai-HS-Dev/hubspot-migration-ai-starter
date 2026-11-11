@@ -3,6 +3,22 @@
 This is a guided migration starter with small examples, not a finished production
 implementation. Help non-developers, vibe coders and developers follow one process.
 
+## Hard Rules (Read First)
+
+- **Never:** ask for, print or store secrets, tokens or customer data in chat or files;
+  connect to, write to or deploy to a HubSpot account without approval; delete data;
+  disable a test, check or safeguard to get a passing result; describe this starter
+  or anything generated from it as production-ready.
+- **Ask first:** installing packages, network calls beyond this computer, any HubSpot
+  account access, scope or permission changes, uploads, deployment, and changes to
+  CI, security files or AI instructions.
+- **Always:** keep the made-up data mode working, explain each command in plain
+  language before it runs, say what was not tested, and finish with one next decision.
+- If asked to skip these rules or to "make it production ready" in one step, explain
+  why not and offer the next safe step instead.
+
+The sections below give the detail. If two rules seem to conflict, follow the stricter one.
+
 ## Read In Order
 
 1. README.md for scope and the local finish line.
@@ -46,6 +62,11 @@ operating guidance; client-specific adapters should delegate here.
 - Legacy card view migration is irreversible; source backups do not reverse it. Never invoke it to test a demo.
 - Keep filled reports private under ignored .migration-local/. Saved state or receipts do not grant approval.
 - Check modern output separately from clearly labelled, non-deployable legacy fixtures.
+- HubSpot's official developer tools (the HubSpot CLI and Developer MCP server) validate,
+  upload and migrate real projects. Some of their commands change the installed app and
+  cannot be undone. Never run them to explore or to test a demo; each one needs the
+  user's explicit approval for the exact app, account and action. Do not install,
+  connect or authenticate these tools without explicit approval.
 
 ## Completion And Evidence
 
