@@ -7,7 +7,7 @@ the safety boundaries stay the same.
 ```text
 Help me use this guided starter, not build a production integration by default.
 Read AGENTS.md, README.md and docs/start-here.md first, then the selected contract,
-example README and EVIDENCE.md. Ask me one question at a time:
+example README and docs/EVIDENCE.md. Ask me one question at a time:
 "What existing behavior do you want to keep working?"
 
 Start with the credential-free local walkthrough. Explain each command, expected

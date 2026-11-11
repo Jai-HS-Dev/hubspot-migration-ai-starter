@@ -42,6 +42,6 @@ installing unreviewed code, disabling a safeguard, changing a live account, publ
 exposure or an irreversible operation. Continue safe mock work while that decision
 is pending. Approval must name the operation and intended environment.
 
-Use [SUPPORT.md](../SUPPORT.md) with the command name, version and a synthetic
+Use [SUPPORT.md](SUPPORT.md) with the command name, version and a synthetic
 reproduction. Explain what you expected versus what happened, without full
 transcripts or sensitive data. A generic error is not permission to extract tokens.

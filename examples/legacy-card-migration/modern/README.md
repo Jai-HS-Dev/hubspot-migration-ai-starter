@@ -3,7 +3,7 @@
 **Example status:** Illustrative.
 **Local check:** `npm run test` from the repository root, after the documented setup.
 **Developer-account verification:** Not verified.
-**Production prerequisites:** Review [the checklist](../../../REAL_MIGRATION_CHECKLIST.md) and [evidence](../../../EVIDENCE.md); no production implementation is included.
+**Production prerequisites:** Review [the checklist](../../../docs/REAL_MIGRATION_CHECKLIST.md) and [evidence](../../../docs/EVIDENCE.md); no production implementation is included.
 
 Synthetic app/card project scaffold with a locally tested renderer; no cloud build, install or view migration verified.
 

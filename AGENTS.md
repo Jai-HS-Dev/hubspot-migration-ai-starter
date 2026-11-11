@@ -24,7 +24,7 @@ The sections below give the detail. If two rules seem to conflict, follow the st
 1. README.md for scope and the local finish line.
 2. docs/start-here.md for the single beginner walkthrough.
 3. docs/non-developer-safety-gates.md and docs/security-for-non-developers.md.
-4. The selected example README, examples/catalog.json and EVIDENCE.md.
+4. The selected example README, examples/catalog.json and docs/EVIDENCE.md.
 5. The relevant blueprint/contract or migration recipe before editing.
 
 START_WITH_AI.md is the first conversation prompt. This file is the canonical

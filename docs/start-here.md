@@ -92,7 +92,7 @@ You are building a new tool or card with nothing to migrate, or your source does
 
 For real work, identify the minimum data, access and existing host/auth first.
 Preserve working choices unless a change is necessary. Use [auth choices](auth-options.md),
-[hosting choices](hosting-options.md) and [compatibility](../COMPATIBILITY.md).
+[hosting choices](hosting-options.md) and [compatibility](COMPATIBILITY.md).
 Provider options are alternatives, not ready-made adapters for every host.
 
 Before connecting, obtain explicit approval for the exact account,
@@ -106,7 +106,7 @@ a safe failure and an acceptance check. Have the AI explain its changes before
 a small, approved local edit. Keep mock mode available.
 Inspect only the approved existing source folder, read-only, before planning a real migration.
 
-Check [example labels](../examples/catalog.json) and [evidence](../EVIDENCE.md).
+Check [example labels](../examples/catalog.json) and [evidence](EVIDENCE.md).
 Do not upload an illustrative folder or deploy an in-memory teaching service just
 because it contains configuration files.
 
@@ -133,7 +133,7 @@ Report failures and skipped tests honestly; a skip is not passed coverage.
 - You understand that installed-account and production behavior remain unverified.
 
 A real implementation still needs: A private inventory and approved plan for the actual source, installed account evidence, unsupported behavior mapping, developer tests and a separately approved cutover.
-Review [the live-use checklist](../REAL_MIGRATION_CHECKLIST.md) and
+Review [the live-use checklist](REAL_MIGRATION_CHECKLIST.md) and
 [implementation responsibility](implementation-responsibility.md) before real use.
 
 Report **generated**, **locally tested**, **developer-account verified** and

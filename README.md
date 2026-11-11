@@ -71,14 +71,14 @@ type in real credentials to make it pass.
 
 1. **Change one small thing:** the [worked exercise](docs/worked-example.md).
 2. **Find the topic that matches yours:** the [migration recipes](recipes/README.md)
-   and the [reviewed notices and dates](MIGRATION.md).
+   and the [reviewed notices and dates](docs/MIGRATION.md).
 3. **Write down what you have** before changing anything, using the templates
    above. Keep filled-in copies private.
 4. **Understand accounts and testing:** the
    [connection guide](docs/connect-to-hubspot.md). Your assistant must ask you
    before it connects anything.
 5. **Before any change to a real app:** [cutover and recovery](docs/cutover-and-recovery.md)
-   and the [real-migration checklist](REAL_MIGRATION_CHECKLIST.md). That is a
+   and the [real-migration checklist](docs/REAL_MIGRATION_CHECKLIST.md). That is a
    separate decision, and some steps cannot be reversed.
 
 ## How This Fits With HubSpot's Own Tools
@@ -113,8 +113,8 @@ More: [security in plain English](docs/security-for-non-developers.md) and
 ## For Developers
 
 Run `npm run check:ai`, `npm run check`, `npm test` and `npm run demo`; no
-packages are needed. [EVIDENCE.md](EVIDENCE.md) records what was and was not
-tested. Reference: [compatibility](COMPATIBILITY.md),
+packages are needed. [docs/EVIDENCE.md](docs/EVIDENCE.md) records what was and was not
+tested. Reference: [compatibility](docs/COMPATIBILITY.md),
 [authentication](docs/auth-options.md), [hosting](docs/hosting-options.md),
 the [card](docs/contracts/legacy-card.md) and [progress](docs/contracts/progress.md)
 contracts, and [which starter you need](docs/choose-your-path.md).
@@ -156,5 +156,5 @@ are not certified to work together.
   advice. Dates and requirements here were correct when reviewed and can
   change, so check HubSpot's current announcements.
 
-Help is best-effort with no response-time promise: see [support](SUPPORT.md).
+Help is best-effort with no response-time promise: see [support](docs/SUPPORT.md).
 Report security problems privately through [SECURITY.md](SECURITY.md).

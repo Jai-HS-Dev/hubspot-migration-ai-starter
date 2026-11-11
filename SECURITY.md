@@ -20,4 +20,4 @@ and a minimal synthetic reproduction privately. Never submit real credentials.
 
 The assessment tool reads approved source but does not establish installed account state.
 No supported-version SLA, comprehensive history scan or absence-of-vulnerabilities
-guarantee is claimed. See [support](SUPPORT.md) and [evidence](EVIDENCE.md).
+guarantee is claimed. See [support](docs/SUPPORT.md) and [evidence](docs/EVIDENCE.md).
