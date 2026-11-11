@@ -7,7 +7,7 @@ Find what might need changing in an older HubSpot integration and practice check
 > a HubSpot account or credentials. To test inside HubSpot, use a developer
 > test account with made-up records.
 
-**Sample result:** The old card returns `priority: High` and `status: Pending`. The replacement displays **Priority: High** and **Status: Pending**. The demo compares made-up data; it does not inspect or migrate your account.
+**Sample result:** The replacement preserves the made-up label **Support priority** and value **Normal**. No installed app or record view changes.
 
 ## Pick Your Path
 
@@ -21,8 +21,9 @@ Copy this into your AI chat. Add your goal in plain English if you already have 
 
 ```text
 Help me use this HubSpot learning starter: https://github.com/Jai-HS-Dev/hubspot-migration-ai-starter
-Read START_WITH_AI.md and AGENTS.md. If you can't open them, tell me how to share the public starter files.
-Ask what I want to do, then guide me through one local example with made-up data.
+Read START_WITH_AI.md and AGENTS.md from the same version as my copy.
+If you can't open them, ask for those public files. Ask what I want to build,
+then guide me through the first local example with made-up data.
 Don't ask for secrets, connect an account, or deploy anything. This is a prototype, not a production integration.
 ```
 
@@ -30,16 +31,20 @@ Don't ask for secrets, connect an account, or deploy anything. This is a prototy
 
 Install [Node.js 24 or newer](https://nodejs.org/en/download) if you don't have it.
 On GitHub, choose **Code > Download ZIP**, extract it, and open a terminal in
-the folder with this README. No project packages need to be installed for this step.
+the folder with this README. For a versioned copy, use a learning-starter ZIP
+from [Releases](https://github.com/Jai-HS-Dev/hubspot-migration-ai-starter/releases) and share its matching AI prompt.
+No project packages need to be installed for this step.
 
 ```bash
 npm run doctor
-npm run demo
+npm run build:example
 ```
 
 In Windows PowerShell, use `npm.cmd` instead of `npm`.
 
-**Success looks like:** `Demo passed. No packages installed, no network calls, no HubSpot migration performed.`
+**Success looks like:** `worked migration preserves a custom label without claiming installed verification` passes.
+
+For the broader offline assessment, run `npm run demo`.
 
 ## Make It Yours
 
